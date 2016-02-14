@@ -301,6 +301,7 @@ function! FindAndReplace(...)
 endfunction
 
 "}}}
+if version >= 730
 "{{{ Toggle relative and absolute line numbers
 function! LineNumberToggle()
   if(&relativenumber == 1)
@@ -310,6 +311,7 @@ function! LineNumberToggle()
   endif
 endfunc
 "}}}
+endif
 "{{{ Toggle the arrow keys
 
 let g:arrow_keys_enabled = 1
@@ -453,7 +455,9 @@ set nocursorline
 syntax sync minlines=256
 
 " Line numbers
+if version >= 730
 set relativenumber
+endif
 "}}}
 
 "Fugitive (Git) in status line
